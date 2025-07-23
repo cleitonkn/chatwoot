@@ -98,7 +98,7 @@ services:
     env_file: .env
     volumes:
       - redis:/data/redis
-    ports: - '6379:6379'
+   # ports: - '6379:6379'
 
   mailhog:
     image: mailhog/mailhog
