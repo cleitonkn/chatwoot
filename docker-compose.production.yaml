@@ -1,4 +1,4 @@
-version: '3'
+# version: '3'
 
 services:
   base: &base
@@ -12,8 +12,8 @@ services:
     depends_on:
       - postgres
       - redis
-    ports:
-      - '127.0.0.1:3000:3000'
+    #ports:
+     # - '127.0.0.1:3000:3000'
     environment:
       - NODE_ENV=production
       - RAILS_ENV=production
@@ -54,8 +54,8 @@ services:
     env_file: .env
     volumes:
       - redis_data:/data
-    ports:
-      - '127.0.0.1:6379:6379'
+    #ports:
+     # - '127.0.0.1:6379:6379'
 
 volumes:
   storage_data:
