@@ -7,6 +7,12 @@ services:
     volumes:
       - storage_data:/app/storage
 
+  healthcheck:
+    test: ["CMD-SHELL", "pg_isready -U postgres"]
+    interval: 10s
+    timeout: 5s
+    retries: 5
+
   rails:
     <<: *base
     depends_on:
